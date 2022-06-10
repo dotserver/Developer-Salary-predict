@@ -63,9 +63,10 @@ def show_explore_page():
 
     data = df["Country"].value_counts()
 
-    fig1, ax1 = plt.subplots(1,1,figsize=(12, 12))
-    ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow=False, startangle=90)
+    fig1, ax1 = plt.subplots(1,1,figsize=(15, 20))
+    ax1.pie(data, autopct="%1.1f%%",textprops={'fontsize': 14}, shadow=False, startangle=90)
     ax1.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax1.legend(loc='upper left',labels=data.index, prop={'size':12})
 
     st.write("""#### Number of Data from different countries""")
 
